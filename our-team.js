@@ -1,9 +1,9 @@
 const teamMembers = [
     { name: "Sharvesh", role: "Founder", linkedin: "https://www.linkedin.com/in/s-sharvesh/", instagram: "https://www.instagram.com/_shxrvesh_/" },
-    { name: "Sakthivel", role: "Co Founder", linkedin: "https://linkedin.com/in/sakthivel", instagram: "https://instagram.com/sakthivel" },
-    { name: "Sreejith", role: "Co Founder", linkedin: "https://linkedin.com/in/sreejith", instagram: "https://instagram.com/sreejith" },
+    { name: "Sakthivel", role: "Co Founder", linkedin: "https://www.linkedin.com/in/sakthivelmeganathan/", instagram: "https://www.instagram.com/s_akthi_.07?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+    { name: "Sreejith", role: "Co Founder", linkedin: "https://www.linkedin.com/in/sreejith-s-288029290/", instagram: "https://www.instagram.com/carino_sj_01/" },
     { name: "Shri Dharshini", role: "Co Founder", linkedin: "https://www.linkedin.com/in/shri-dharshini-velu-85606a2a6/recent-activity/all/", instagram: "https://instagram.com/shridharshinivelu" },
-    { name: "SivaDharana", role: "Co Founder", linkedin: "https://linkedin.com/in/sivadharana", instagram: "https://instagram.com/sivadharana" },
+    { name: "SivaDharana", role: "Co Founder", linkedin: "https://www.linkedin.com/in/siva-dharana-622231314/", instagram: "https://www.instagram.com/dhara_11_11?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
 ];
 
 const cards = document.querySelectorAll(".card");
