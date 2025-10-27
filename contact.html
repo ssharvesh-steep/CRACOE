@@ -560,17 +560,29 @@
     
     async function sendGlobally(data) {
       try {
+        // Save to localStorage first
+        const messages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
+        messages.push(data);
+        localStorage.setItem('cracoe_messages', JSON.stringify(messages));
+        
+        // Broadcast via WebSocket
         if(globalSocket?.connected) {
           globalSocket.emit('message', data);
         }
+        
+        // Send via external service
         await fetch('https://formspree.io/f/xpznvqko', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
         });
-        const messages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
-        messages.push(data);
-        localStorage.setItem('cracoe_messages', JSON.stringify(messages));
+        
+        // Trigger storage event for same-device communication
+        window.dispatchEvent(new StorageEvent('storage', {
+          key: 'cracoe_messages',
+          newValue: JSON.stringify(messages)
+        }));
+        
         return true;
       } catch(e) {
         return false;
