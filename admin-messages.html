@@ -101,20 +101,16 @@
 
       connectToGlobalNetwork() {
         try {
-          this.socket = io('https://cracoe-messaging.herokuapp.com');
+          this.socket = io('wss://cracoe-global.herokuapp.com');
           
           this.socket.on('connect', () => {
             this.updateConnectionStatus('Connected Globally', 'success');
             this.socket.emit('join_admin');
           });
 
-          this.socket.on('new_message', (message) => {
+          this.socket.on('message', (message) => {
             this.addNewMessage(message);
             this.showNotification(`New message from ${message.name}`);
-          });
-
-          this.socket.on('device_count', (count) => {
-            document.getElementById('device-count').textContent = count;
           });
 
           this.socket.on('disconnect', () => {
@@ -123,12 +119,22 @@
 
         } catch (error) {
           this.updateConnectionStatus('Local Mode', 'warning');
+          this.setupLocalPolling();
         }
+      }
+
+      setupLocalPolling() {
+        setInterval(() => {
+          const messages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
+          const newMessages = messages.filter(m => !this.messages.find(existing => existing.id === m.id));
+          newMessages.forEach(msg => this.addNewMessage(msg));
+        }, 2000);
       }
 
       async loadMessages() {
         try {
-          this.messages = await this.storage.getGlobalMessages();
+          const localMessages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
+          this.messages = localMessages;
           this.renderMessages();
           this.updateStats();
         } catch (error) {
@@ -256,6 +262,13 @@
         if ('Notification' in window && Notification.permission === 'default') {
           Notification.requestPermission();
         }
+        
+        // Listen for localStorage changes (same device)
+        window.addEventListener('storage', (e) => {
+          if (e.key === 'cracoe_messages') {
+            this.loadMessages();
+          }
+        });
       }
 
       startPeriodicRefresh() {
