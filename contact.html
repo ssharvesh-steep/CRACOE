@@ -3,10 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us – CRACOE</title>
-  <link rel="icon" href="quorics-logo.png" type="image/png">
+  <title>Contact CRACOE - Get in Touch for IT Services & Consulting</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact CRACOE for expert IT services, AI development, and digital transformation solutions. Get in touch with our team for your next project." />
+  <meta name="keywords" content="contact CRACOE, IT services contact, AI development inquiry, tech consulting contact, software development quote" />
+  <meta name="author" content="CRACOE" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cracoe.com/contact.html" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Contact CRACOE - IT Services & Consulting" />
+  <meta property="og:description" content="Get in touch with CRACOE for expert IT services, AI development, and digital transformation solutions. Contact our team today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cracoe.com/contact.html" />
+  <meta property="og:image" content="https://cracoe.com/cracoe-logo.png" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact CRACOE - IT Services & Consulting" />
+  <meta name="twitter:description" content="Get in touch with CRACOE for expert IT services and consulting solutions." />
+  <meta name="twitter:image" content="https://cracoe.com/cracoe-logo.png" />
+  
+  <link rel="icon" href="cracoe-logo.png" type="image/png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact CRACOE",
+    "description": "Contact page for CRACOE IT services and consulting",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "CRACOE",
+      "url": "https://cracoe.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9843147333",
+        "contactType": "customer service",
+        "email": "info@cracoe.com",
+        "areaServed": "Worldwide",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "H448 High School Road, P.Velur",
+        "addressLocality": "Namakkal",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "India"
+      },
+      "sameAs": [
+        "https://www.instagram.com/cracoe__official/",
+        "https://www.linkedin.com/in/cracoe-undefined-a61219387/",
+        "https://x.com/CRACOE_official"
+      ]
+    }
+  }
+  </script>
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="contact-storage.js"></script>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500&display=swap" rel="stylesheet">
@@ -106,6 +164,11 @@
             <span class="text-gray-500 text-xs uppercase tracking-wider">■ GET IN TOUCH</span>
           </div>
           
+          <!-- Connection Status -->
+          <div id="connection-status" class="mb-4 p-2 text-xs text-center rounded hidden">
+            <span id="status-text">Connecting...</span>
+          </div>
+          
           <!-- Message Container -->
           <div id="message-container" class="mb-6 p-4 rounded-lg hidden">
             <p id="message-text" class="text-sm font-medium"></p>
@@ -137,42 +200,32 @@
               <textarea rows="4" id="message" name="message" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none resize-none transition-colors rounded-t-md" onkeydown="if(event.key==='Enter'&&event.ctrlKey){document.getElementById('contact-form').dispatchEvent(new Event('submit'));}"></textarea>
             </div>
             
-            <button type="submit" class="bg-black text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
+            <button type="submit" class="bg-black text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors disabled:opacity-50" id="submit-btn">
               SEND MESSAGE
             </button>
-          
-            </a>
           </form>
         </div>
 
         <!-- Contact Information -->
-        <div class="bg-white/30 backdrop-blur-sm rounded-lg p-6 lg:p-8 shadow-lg">
-          <div class="mb-8">
-            <span class="text-gray-500 text-xs uppercase tracking-wider">■ REACH OUT</span>
-          </div>
-          
-          <div class="space-y-8">
-            <div>
-              <h3 class="text-sm font-medium text-black mb-2 uppercase">EMAIL</h3>
-              <p class="text-gray-600">ssharvesh616@gmail.com</p>
-            </div>
-            
-            <div>
-              <h3 class="text-sm font-medium text-black mb-2 uppercase">PHONE</h3>
-              <p class="text-gray-600">+91 9843147333</p>
-            </div>
-            
-            <div>
-              <h3 class="text-sm font-medium text-black mb-2 uppercase">ADDRESS</h3>
-              <p class="text-gray-600">
-                 H448 HIGH SCHOOL ROAD<br>
-                P.VELUR , NAMAKKAL<br>
-                TAMILNADU<br>
-                INDIA
-              </p>
-            </div>
-            
-            <div>
+        <div class="space-y-8">
+          <div>
+            <span class="text-gray-500 text-xs uppercase tracking-wider">■ REACH US</span>
+            <div class="mt-6 space-y-6">
+              <div>
+                <h3 class="text-sm font-medium text-black mb-2">EMAIL</h3>
+                <p class="text-gray-600">info@cracoe.com</p>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-medium text-black mb-2">PHONE</h3>
+                <p class="text-gray-600">+91-9843147333</p>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-medium text-black mb-2">ADDRESS</h3>
+                <p class="text-gray-600">H448 High School Road, P.Velur<br>Namakkal, Tamil Nadu, India</p>
+              </div>
+              <div>
               <h3 class="text-sm font-medium text-black mb-2 uppercase">OFFICE HOURS</h3>
               <p class="text-gray-600">
                 Monday - Friday: 9:00 AM - 6:00 PM<br>
@@ -180,8 +233,14 @@
                 Sunday: Closed
               </p>
             </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
       </div>
     </div>
   </section>
@@ -220,10 +279,9 @@
 				<span style="color: #000000; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">■ JOIN THE CONVERSATION</span>
 			</div>
 			<ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-				<li><a href="#" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">INSTAGRAM</a></li>
-				<li><a href="#" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">LINKEDIN</a></li>
-				<li><a href="#" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">YOUTUBE</a></li>
-				<li><a href="#" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">BEHANCE</a></li>
+				<li><a href="https://www.instagram.com/cracoe__official/" target="_blank" rel="noopener" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">INSTAGRAM</a></li>
+				<li><a href="https://www.linkedin.com/in/cracoe-undefined-a61219387/" target="_blank" rel="noopener" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">LINKEDIN</a></li>
+				<li><a href="https://x.com/CRACOE_official" target="_blank" rel="noopener" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">X</a></li>
 			</ul>
 		</div>
 		<!-- Column 4: Contact Details -->
@@ -478,8 +536,52 @@
       });
     });
 
+    // Global messaging system
+    let globalSocket;
+    
+    function initGlobalMessaging() {
+      try {
+        globalSocket = io('wss://cracoe-global.herokuapp.com');
+        globalSocket.on('connect', () => updateConnectionStatus('Connected globally', 'success'));
+        globalSocket.on('disconnect', () => updateConnectionStatus('Offline', 'error'));
+      } catch(e) {
+        updateConnectionStatus('Local mode', 'warning');
+      }
+    }
+    
+    function updateConnectionStatus(msg, type) {
+      const el = document.getElementById('connection-status');
+      if(el) {
+        el.className = `mb-4 p-2 text-xs text-center rounded ${type==='success'?'bg-green-100 text-green-800':type==='error'?'bg-red-100 text-red-800':'bg-yellow-100 text-yellow-800'}`;
+        document.getElementById('status-text').textContent = msg;
+        el.classList.remove('hidden');
+      }
+    }
+    
+    async function sendGlobally(data) {
+      try {
+        if(globalSocket?.connected) {
+          globalSocket.emit('message', data);
+        }
+        await fetch('https://formspree.io/f/xpznvqko', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+        const messages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
+        messages.push(data);
+        localStorage.setItem('cracoe_messages', JSON.stringify(messages));
+        return true;
+      } catch(e) {
+        return false;
+      }
+    }
+    
+    // Initialize global messaging
+    initGlobalMessaging();
+    
     // Contact form functionality
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       
       const submitBtn = document.querySelector('button[type="submit"]');
@@ -487,6 +589,8 @@
       submitBtn.disabled = true;
       
       const formData = {
+        id: Date.now(),
+        timestamp: new Date().toISOString(),
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value || '',
@@ -494,31 +598,17 @@
         message: document.getElementById('message').value
       };
       
-      // Send to server
-      fetch('contact-handler.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          showMessage('Message sent successfully! We will get back to you soon.', 'success');
-          document.getElementById('contact-form').reset();
-        } else {
-          showMessage(data.error || 'Failed to send message. Please try again.', 'error');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
+      const success = await sendGlobally(formData);
+      
+      if(success) {
+        showMessage('Message sent globally! We will get back to you soon.', 'success');
+        document.getElementById('contact-form').reset();
+      } else {
         showMessage('Failed to send message. Please try again.', 'error');
-      })
-      .finally(() => {
-        submitBtn.textContent = 'SEND MESSAGE';
-        submitBtn.disabled = false;
-      });
+      }
+      
+      submitBtn.textContent = 'SEND MESSAGE';
+      submitBtn.disabled = false;
     });
   </script>
 
