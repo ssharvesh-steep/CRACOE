@@ -1,202 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Messages | CRACOE</title>
-  <link rel="icon" href="quorics-logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact CRACOE - Get in Touch for IT Services & Consulting</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact CRACOE for expert IT services, AI development, and digital transformation solutions. Get in touch with our team for your next project." />
+  <meta name="keywords" content="contact CRACOE, IT services contact, AI development inquiry, tech consulting contact, software development quote" />
+  <meta name="author" content="CRACOE" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cracoe.com/contact.html" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Contact CRACOE - IT Services & Consulting" />
+  <meta property="og:description" content="Get in touch with CRACOE for expert IT services, AI development, and digital transformation solutions. Contact our team today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cracoe.com/contact.html" />
+  <meta property="og:image" content="https://cracoe.com/cracoe-logo.png" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact CRACOE - IT Services & Consulting" />
+  <meta name="twitter:description" content="Get in touch with CRACOE for expert IT services and consulting solutions." />
+  <meta name="twitter:image" content="https://cracoe.com/cracoe-logo.png" />
+  
+  <link rel="icon" href="cracoe-logo.png" type="image/png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact CRACOE",
+    "description": "Contact page for CRACOE IT services and consulting",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "CRACOE",
+      "url": "https://cracoe.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9843147333",
+        "contactType": "customer service",
+        "email": "info@cracoe.com",
+        "areaServed": "Worldwide",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "H448 High School Road, P.Velur",
+        "addressLocality": "Namakkal",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "India"
+      },
+      "sameAs": [
+        "https://www.instagram.com/cracoe__official/",
+        "https://www.linkedin.com/in/cracoe-undefined-a61219387/",
+        "https://x.com/CRACOE_official"
+      ]
+    }
+  }
+  </script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="contact-storage.js"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'IBM Plex Mono', monospace; }
-    .message-card { transition: all 0.3s ease; }
-    .message-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    @media (max-width: 768px) { 
+      footer {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      footer > div {
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid white !important;
+        padding: 30px 20px !important;
+      }
+      footer > div:last-child {
+        border-bottom: none !important;
+      }
+    }
+  </style>
+  <style>
+    @media (max-width: 768px) {
+      footer {
+        display: block;
+        height: auto;
+      }
+      .footer-column {
+        width: 100% !important;
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgb(0, 0, 0) !important;
+      }
+      .footer-column:last-child {
+        border-bottom: none !important;
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
-  <!-- Login Modal -->
-  <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Admin Login</h2>
-      <form id="login-form">
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
-          <input type="text" id="username" required class="w-full border border-gray-300 rounded px-3 py-2 focus:border-black focus:outline-none">
-        </div>
-        <div class="mb-6">
-          <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-          <input type="password" id="password" required class="w-full border border-gray-300 rounded px-3 py-2 focus:border-black focus:outline-none">
-        </div>
-        <button type="submit" class="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors">
-          Login
-        </button>
-      </form>
-      <div id="login-error" class="mt-4 text-red-600 text-sm text-center hidden"></div>
+<body class="text-black" style="font-family: 'IBM Plex Mono', monospace; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh;">
+  <style>
+    /* Menu brightness effects */
+    nav {
+      transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    nav a {
+      transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                  color 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  text-shadow 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 8s cubic-bezier(0.05, 0.7, 0.1, 1) 0.5s,
+                  letter-spacing 6s cubic-bezier(0.05, 0.7, 0.1, 1) 0.3s;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    nav:hover a {
+      opacity: 0.6;
+    }
+    nav a:hover {
+      opacity: 1 !important;
+      color: #000000 !important;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      transform: translateX(-6px);
+      letter-spacing: 6px;
+    }
+  </style>
+
+  <!-- Top Bar -->
+  <div id="lux-topbar" class="fixed top-0 left-0 w-full z-50 backdrop-blur border-b border-zinc-800 h-14 flex items-center px-8 justify-between">
+    <div class="flex items-center gap-3">
+      <span class="inline-block w-3 h-3 rounded-sm bg-black mr-2"></span>
+      <span class="font-mono text-xs tracking-widest text-black hidden md:inline">INR 00:00:00 GMT +5:30</span>
+    </div>
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <a href="index.html" class="text-lg md:text-2xl font-bold tracking-widest text-black" style="font-family: 'Poiret One', cursive;">CRACOE</a>
+    </div>
+    <div class="ml-auto">
+      <span id="menu-toggle" class="uppercase text-sm tracking-widest font-semibold cursor-pointer text-black">MENU</span>
     </div>
   </div>
 
-  <div id="admin-content" class="container mx-auto px-4 py-8" style="display: none;">
-    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-      <h1 class="text-3xl font-bold text-gray-800 mb-2">Contact Messages</h1>
-      <p class="text-gray-600">Manage incoming contact form submissions</p>
-      <button onclick="loadMessages()" class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors mr-2">
-        Refresh Messages
-      </button>
-      <button onclick="addTestMessage()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-        Add Test Message
-      </button>
-      <p class="text-sm text-gray-500 mt-2">Total messages: <span id="message-count">0</span></p>
-    </div>
+  <!-- Contact Section -->
+  <section class="min-h-screen pb-20" style="background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%); padding-top: 100px;">
+    <div class="max-w-6xl mx-auto px-8">
+      <div class="mb-20">
+        <h1 class="text-6xl md:text-8xl font-light text-black tracking-wider mb-8" style="font6-family: 'Roboto Flex', sans-serif;">
+          CONTACT<br>US
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl">
+          Ready to start your next project? Get in touch with our team and let's discuss how we can bring your vision to life.
+        </p>
+      </div>
 
-    <div id="messages-container" class="space-y-4">
-      <div class="text-center py-8">
-        <p class="text-gray-500">Loading messages...</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <!-- Contact Form -->
+        <div class="bg-white/30 backdrop-blur-sm rounded-lg p-6 lg:p-8 shadow-lg">
+          <div class="mb-8">
+            <span class="text-gray-500 text-xs uppercase tracking-wider">■ GET IN TOUCH</span>
+          </div>
+          
+          <!-- Message Container -->
+          <div id="message-container" class="mb-6 p-4 rounded-lg hidden">
+            <p id="message-text" class="text-sm font-medium"></p>
+          </div>
+          
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-black mb-2">NAME</label>
+              <input type="text" id="name" name="name" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-black mb-2">EMAIL</label>
+              <input type="email" id="email" name="email" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-black mb-2">PHONE</label>
+              <input type="tel" id="phone" name="phone" class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-black mb-2">COMPANY</label>
+              <input type="text" id="company" name="company" class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-black mb-2">MESSAGE</label>
+              <textarea rows="4" id="message" name="message" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none resize-none transition-colors rounded-t-md" onkeydown="if(event.key==='Enter'&&event.ctrlKey){document.getElementById('contact-form').dispatchEvent(new Event('submit'));}"></textarea>
+            </div>
+            
+            <button type="submit" class="bg-black text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
+              SEND MESSAGE
+            </button>
+          
+            </a>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="bg-white/30 backdrop-blur-sm rounded-lg p-6 lg:p-8 shadow-lg">
+          <div class="mb-8">
+            <span class="text-gray-500 text-xs uppercase tracking-wider">■ REACH OUT</span>
+          </div>
+          
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-sm font-medium text-black mb-2 uppercase">EMAIL</h3>
+              <p class="text-gray-600">info@cracoe.com</p>
+            </div>
+            
+            <div>
+              <h3 class="text-sm font-medium text-black mb-2 uppercase">PHONE</h3>
+              <p class="text-gray-600">+91 9843147333</p>
+            </div>
+            
+            <div>
+              <h3 class="text-sm font-medium text-black mb-2 uppercase">ADDRESS</h3>
+              <p class="text-gray-600">
+                H448 HIGH SCHOOL ROAD<br>
+                P.VELUR , NAMAKKAL<br>
+                TAMILNADU<br>
+                INDIA
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-sm font-medium text-black mb-2 uppercase">OFFICE HOURS</h3>
+              <p class="text-gray-600">
+                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                Saturday: 10:00 AM - 4:00 PM<br>
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div style="width: 100%; height: 1px; background-color: rgb(0, 0, 0); margin-top: 120px;"></div>
+	<style>
+		@media (max-width: 768px) {
+			.footer-mobile { flex-direction: column !important; height: auto !important; }
+			.footer-column { width: 100% !important; border-right: none !important; border-bottom: 1px solid rgb(0, 0, 0) !important; }
+			.footer-column:last-child { border-bottom: none !important; }
+		}
+	</style>
+	<footer class="footer-mobile" style="width: 100%; height: 500px; background-color: #f8fafc; font-family: 'IBM Plex Mono', monospace; display: flex;">
+		<!-- Column 1: Vision Statement -->
+		<div class="footer-column" style="width: 25%; height: 100%; padding: 40px; border-right: 1px solid rgb(0, 0, 0); display: flex; align-items: flex-start;">
+			<h3 style="color: rgb(0, 0, 0); text-transform: uppercase; font-weight: 500; font-size: 14px; line-height: 1.4; margin: 0;">
+				VISUALISING THIS WORLD<br>AND THE NEXT
+			</h3>
+		</div>
+		<!-- Column 2: Navigation -->
+		<div class="footer-column" style="width: 25%; height: 100%; padding: 40px; border-right: 1px solid rgb(0, 0, 0);">
+			<div style="margin-bottom: 20px;">
+				<span style="color: #000000; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">■ DISCOVER MORE</span>
+			</div>
+			<ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+				<li><a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">HOME</a></li>
+				<li><a href="#" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">WORK</a></li>
+				<li><a href="services.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">SERVICES</a></li>
+				<li><a href="#" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">STUDIO</a></li>
+				<li><a href="contact.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">CONTACT US</a></li>
+			</ul>
+		</div>
+		<!-- Column 3: Social -->
+		<div class="footer-column" style="width: 25%; height: 100%; padding: 40px; border-right: 1px solid rgb(0, 0, 0);">
+			<div style="margin-bottom: 20px;">
+				<span style="color: #000000; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">■ JOIN THE CONVERSATION</span>
+			</div>
+			<ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+				<li><a href="https://www.instagram.com/cracoe__official/" target="_blank" rel="noopener" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">INSTAGRAM</a></li>
+				<li><a href="https://www.linkedin.com/in/cracoe-undefined-a61219387/" target="_blank" rel="noopener" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">LINKEDIN</a></li>
+				<li><a href="https://x.com/CRACOE_official" target="_blank" rel="noopener" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">X</a></li>
+			</ul>
+		</div>
+		<!-- Column 4: Contact Details -->
+		<div class="footer-column" style="width: 25%; height: 100%; padding: 40px;">
+			<div style="margin-bottom: 20px;">
+				<span style="color: #000000; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">■ MORE DETAILS</span>
+			</div>
+			<div style="font-size: 12px; line-height: 1.8;">
+				<p style="color: #000000; margin: 0 0 10px 0;">CONTACT US AT</p>
+				<p style="color: rgb(0, 0, 0); margin: 0 0 15px 0; text-transform: lowercase;">info@carcoe.com</p>
+				<p style="color: rgb(0, 0, 0); margin: 0 0 20px 0; text-transform: uppercase; line-height: 1.6;">
+				 H448 HIGH SCHOOL ROAD<br>
+				  P.VELUR , NAMAKKAL<br>
+				  TAMILNADU<br>
+				  INDIA
+				</p>
+				<a href="contact.html" style="color: rgb(0, 0, 0); text-decoration: underline; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">
+				  ↳ CONTACT US
+				</a>
+			</div>
+		</div>
+	</footer>
+	<div style="width: 100%; height: 1px; background-color: rgb(0, 0, 0);"></div>
+	<!-- Copyright Section -->
+	<div style="width: 100%; background-color: #f8fafc; padding: 20px 0; text-align: center; font-family: 'IBM Plex Mono', monospace;">
+		<p style="color: #000000; font-size: 11px; margin: 0; letter-spacing: 1px;">
+		  © 2025 CRACOE. All rights reserved. | 
+		  <a href="privacy-policy.html" style="color: #000000; text-decoration: underline;">Privacy Policy</a> | 
+		  <a href="admin-messages.html" style="color: #000000; text-decoration: underline;">Admin</a>
+		</p>
+	</div>
+  <!-- Menu Overlay -->
+  <div id="menu-overlay" style="position: fixed; top: 0; right: 0; width: 50vw; height: 100vh; background-color: #ffffff; z-index: 1000; display: none; font-family: 'Roboto Flex', sans-serif;">
+    <style>
+      @media (max-width: 768px) {
+        #menu-overlay {
+          width: 100vw !important;
+          left: 0 !important;
+          right: auto !important;
+        }
+      }
+    </style>
+    
+    <!-- Desktop Menu (769px and above) -->
+    <div class="desktop-menu" style="display: none;">
+      <div style="position: fixed; top: 0; right: 0; width: 50%; z-index: 50; height: 56px; display: flex; align-items: center; padding: 0 32px; justify-content: flex-end;">
+        <span id="menu-close" style="text-transform: uppercase; color: black; font-size: 14px; letter-spacing: 0.1em; font-weight: 600; cursor: pointer;">CLOSE</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: flex-end; height: 100vh; padding: 0 80px;">
+        <nav id="animated-nav" style="display: flex; flex-direction: column; text-align: right; position: relative;">
+          <a href="index.html" class="wave-menu-item" data-text="HOME" style="color: black; text-decoration: none; font-size: 72px; font-weight: 300; text-transform: uppercase; padding: 20px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -80px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="services.html" class="wave-menu-item" data-text="SERVICES" style="color: black; text-decoration: none; font-size: 72px; font-weight: 300; text-transform: uppercase; padding: 20px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -80px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="our-team.html" class="wave-menu-item" data-text="TEAM" style="color: black; text-decoration: none; font-size: 72px; font-weight: 300; text-transform: uppercase; padding: 20px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -80px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="work.html" class="wave-menu-item" data-text="WORK" style="color: black; text-decoration: none; font-size: 72px; font-weight: 300; text-transform: uppercase; padding: 20px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -80px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="contact.html" class="wave-menu-item" data-text="CONTACT" style="color: black; text-decoration: none; font-size: 72px; font-weight: 300; text-transform: uppercase; padding: 20px 0; display: block; overflow: hidden;"></a>
+        </nav>
       </div>
     </div>
     
-    <div class="text-center mt-8">
-      <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
-        Logout
-      </button>
+    <!-- Mobile Menu (768px and below) -->
+    <div class="mobile-menu" style="display: none; font-family: 'Roboto Flex', sans-serif;">
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 60px; display: flex; align-items: center; padding: 0 40px; justify-content: space-between; z-index: 1001;">
+        <div style="font-size: 24px; font-weight: 300; letter-spacing: 0.2em; color: black;">
+          CRACOE
+        </div>
+        <div>
+          <span class="menu-close-mobile" style="font-size: 16px; font-weight: 400; letter-spacing: 0.15em; color: black; cursor: pointer;">CLOSE</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: flex-end; height: 100vh; padding: 0 40px;">
+        <nav id="mobile-animated-nav" style="display: flex; flex-direction: column; text-align: right; position: relative;">
+          <a href="index.html" class="mobile-wave-menu-item" data-text="HOME" style="color: black; text-decoration: none; font-size: clamp(40px, 8vw, 60px); font-weight: 300; text-transform: uppercase; padding: 15px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -40px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="services.html" class="mobile-wave-menu-item" data-text="SERVICES" style="color: black; text-decoration: none; font-size: clamp(40px, 8vw, 60px); font-weight: 300; text-transform: uppercase; padding: 15px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -40px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="our-team.html" class="mobile-wave-menu-item" data-text="TEAM" style="color: black; text-decoration: none; font-size: clamp(40px, 8vw, 60px); font-weight: 300; text-transform: uppercase; padding: 15px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -40px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="work.html" class="mobile-wave-menu-item" data-text="WORK" style="color: black; text-decoration: none; font-size: clamp(40px, 8vw, 60px); font-weight: 300; text-transform: uppercase; padding: 15px 0; display: block; overflow: hidden; border-bottom: 1px solid #ccc; position: relative;"></a>
+          <div style="position: absolute; left: -40px; width: 100vw; height: 1px; background-color: #ccc; bottom: -1px;"></div>
+          <a href="contact.html" class="mobile-wave-menu-item" data-text="CONTACT" style="color: black; text-decoration: none; font-size: clamp(40px, 8vw, 60px); font-weight: 300; text-transform: uppercase; padding: 15px 0; display: block; overflow: hidden;"></a>
+        </nav>
+      </div>
     </div>
   </div>
 
   <script>
-    // Login credentials
-    const ADMIN_USERNAME = 'admin';
-    const ADMIN_PASSWORD = 'cracoe2025';
-
-    // Auto logout on page events
-    window.addEventListener('beforeunload', logout);
-    window.addEventListener('pagehide', logout);
-    document.addEventListener('visibilitychange', function() {
-      if (document.hidden) logout();
-    });
-
-    // Check if already logged in
-    if (sessionStorage.getItem('admin_logged_in') === 'true') {
-      showAdminPanel();
-    }
-
-    // Login form handler
-    document.getElementById('login-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+    // Wave animation for menu items
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuItems = document.querySelectorAll('.wave-menu-item');
       
-      if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-        sessionStorage.setItem('admin_logged_in', 'true');
-        showAdminPanel();
-      } else {
-        document.getElementById('login-error').textContent = 'Invalid credentials';
-        document.getElementById('login-error').classList.remove('hidden');
+      menuItems.forEach((item, itemIndex) => {
+        const text = item.getAttribute('data-text');
+        const letters = text.split('');
+        
+        // Create letter spans
+        item.innerHTML = letters.map((letter, index) => 
+          `<span class="wave-letter" data-index="${index}" style="display: inline-block; transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); transition-delay: ${index * 0.1 + itemIndex * 0.1}s; opacity: 0.8;">${letter}</span>`
+        ).join('');
+        
+        // Add hover effects
+        item.addEventListener('mouseenter', function() {
+          const letters = this.querySelectorAll('.wave-letter');
+          letters.forEach((letter, index) => {
+            const rotation = Math.sin(index * 0.5) * 5;
+            letter.style.transform = `translateY(-10px) rotate(${rotation}deg)`;
+            letter.style.opacity = '1';
+            letter.style.textShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+          });
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          const letters = this.querySelectorAll('.wave-letter');
+          letters.forEach(letter => {
+            letter.style.transform = 'translateY(0) rotate(0deg)';
+            letter.style.opacity = '0.8';
+            letter.style.textShadow = 'none';
+          });
+        });
+      });
+      
+      // Mobile menu wave animation
+      const mobileMenuItems = document.querySelectorAll('.mobile-wave-menu-item');
+      
+      mobileMenuItems.forEach((item, itemIndex) => {
+        const text = item.getAttribute('data-text');
+        const letters = text.split('');
+        
+        // Create letter spans
+        item.innerHTML = letters.map((letter, index) => 
+          `<span class="mobile-wave-letter" data-index="${index}" style="display: inline-block; transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); transition-delay: ${index * 0.1 + itemIndex * 0.1}s; opacity: 0.8;">${letter}</span>`
+        ).join('');
+        
+        // Add hover effects
+        item.addEventListener('mouseenter', function() {
+          const letters = this.querySelectorAll('.mobile-wave-letter');
+          letters.forEach((letter, index) => {
+            const rotation = Math.sin(index * 0.5) * 5;
+            letter.style.transform = `translateY(-10px) rotate(${rotation}deg)`;
+            letter.style.opacity = '1';
+            letter.style.textShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+          });
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          const letters = this.querySelectorAll('.mobile-wave-letter');
+          letters.forEach(letter => {
+            letter.style.transform = 'translateY(0) rotate(0deg)';
+            letter.style.opacity = '0.8';
+            letter.style.textShadow = 'none';
+          });
+        });
+      });
+      
+      // Time display functionality
+      function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        });
+        const timeElements = document.querySelectorAll('#lux-time, #menu-time');
+        timeElements.forEach(element => {
+          if (element) {
+            element.textContent = `INR ${timeString} GMT +5:30`;
+          }
+        });
       }
+      
+      // Menu functionality
+      updateTime();
+      setInterval(updateTime, 1000);
+      
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuClose = document.getElementById('menu-close');
+      const menuCloseMobile = document.querySelector('.menu-close-mobile');
+      const menuOverlay = document.getElementById('menu-overlay');
+      const desktopMenu = document.querySelector('.desktop-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      function showMenu() {
+        menuOverlay.style.display = 'block';
+        
+        // Check screen size and show appropriate menu
+        if (window.innerWidth > 768) {
+          desktopMenu.style.display = 'block';
+          mobileMenu.style.display = 'none';
+        } else {
+          desktopMenu.style.display = 'none';
+          mobileMenu.style.display = 'block';
+        }
+      }
+      
+      function hideMenu() {
+        menuOverlay.style.display = 'none';
+        desktopMenu.style.display = 'none';
+        mobileMenu.style.display = 'none';
+      }
+      
+      if (menuToggle) {
+        menuToggle.addEventListener('click', showMenu);
+      }
+      
+      if (menuClose) {
+        menuClose.addEventListener('click', hideMenu);
+      }
+      
+      if (menuCloseMobile) {
+        menuCloseMobile.addEventListener('click', hideMenu);
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (menuOverlay.style.display === 'block') {
+          showMenu();
+        }
+      });
+    });
+    
+    // Message display functions
+    function showMessage(text, type) {
+      const container = document.getElementById('message-container');
+      const messageText = document.getElementById('message-text');
+      
+      messageText.textContent = text;
+      container.className = `mb-6 p-4 rounded-lg ${
+        type === 'success' ? 'bg-green-100 border border-green-300 text-green-800' : 
+        type === 'error' ? 'bg-red-100 border border-red-300 text-red-800' :
+        'bg-blue-100 border border-blue-300 text-blue-800'
+      }`;
+      container.classList.remove('hidden');
+      
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        container.classList.add('hidden');
+      }, 5000);
+    }
+    
+    // Enter key submit for all form fields
+    document.querySelectorAll('#contact-form input').forEach(input => {
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          document.getElementById('contact-form').dispatchEvent(new Event('submit'));
+        }
+      });
     });
 
-    function showAdminPanel() {
-      document.getElementById('login-modal').style.display = 'none';
-      document.getElementById('admin-content').style.display = 'block';
-      loadMessages();
-    }
-
-    function logout() {
-      sessionStorage.removeItem('admin_logged_in');
-      window.location.href = 'contact.html';
-    }
-
-    function addTestMessage() {
-      const testMessage = {
-        name: 'Test User',
-        email: 'test@example.com',
-        phone: '+1234567890',
-        company: 'Test Company',
-        message: 'This is a test message to verify the system is working.'
+    // Contact form functionality
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.querySelector('button[type="submit"]');
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.disabled = true;
+      
+      const formData = {
+        id: Date.now(),
+        timestamp: new Date().toISOString(),
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value || '',
+        company: document.getElementById('company').value || '',
+        message: document.getElementById('message').value
       };
       
-      fetch('contact-handler.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(testMessage)
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          loadMessages();
-        } else {
-          alert('Failed to save test message');
+      // Save to localStorage
+      setTimeout(() => {
+        try {
+          const messages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
+          messages.push(formData);
+          localStorage.setItem('cracoe_messages', JSON.stringify(messages));
+          
+          showMessage('Message sent successfully! We will get back to you soon.', 'success');
+          document.getElementById('contact-form').reset();
+        } catch (error) {
+          showMessage('Failed to send message. Please try again.', 'error');
         }
-      })
-      .catch(error => {
-        alert('Failed to save test message');
-      });
-    }
-
-    function loadMessages() {
-      fetch('get-messages.php')
-        .then(response => response.json())
-        .then(messages => {
-          const container = document.getElementById('messages-container');
-          const countElement = document.getElementById('message-count');
-          
-          if (countElement) {
-            countElement.textContent = messages.length;
-          }
-          
-          if (!messages || messages.length === 0) {
-            container.innerHTML = `
-              <div class="text-center py-8">
-                <p class="text-gray-500">No messages found</p>
-              </div>
-            `;
-            return;
-          }
-
-          container.innerHTML = messages.reverse().map((msg, index) => `
-            <div class="message-card bg-white rounded-lg shadow-md p-6 border-l-4 border-black">
-              <div class="flex justify-between items-start mb-4">
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800">${escapeHtml(msg.name)}</h3>
-                  <p class="text-sm text-gray-600">${escapeHtml(msg.email)}</p>
-                  ${msg.phone ? `<p class="text-sm text-gray-600">${escapeHtml(msg.phone)}</p>` : ''}
-                  ${msg.company ? `<p class="text-sm text-gray-500">${escapeHtml(msg.company)}</p>` : ''}
-                  ${msg.ip ? `<p class="text-xs text-gray-400">IP: ${escapeHtml(msg.ip)}</p>` : ''}
-                </div>
-                <div class="text-right">
-                  <p class="text-xs text-gray-500">${new Date(msg.timestamp).toLocaleString()}</p>
-                </div>
-              </div>
-              <div class="bg-gray-50 rounded p-4">
-                <p class="text-gray-700 whitespace-pre-wrap">${escapeHtml(msg.message)}</p>
-              </div>
-              <div class="mt-4 flex gap-2">
-                <a href="mailto:${escapeHtml(msg.email)}" class="bg-black text-white px-3 py-1 rounded text-sm hover:bg-gray-800 transition-colors">
-                  Reply
-                </a>
-              </div>
-            </div>
-          `).join('');
-        })
-        .catch(error => {
-          document.getElementById('messages-container').innerHTML = `
-            <div class="text-center py-8">
-              <p class="text-red-500">Error loading messages: ${error.message}</p>
-            </div>
-          `;
-        });
-    }
-
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-
-
-
-    // Load messages on page load
-    loadMessages();
+        
+        submitBtn.textContent = 'SEND MESSAGE';
+        submitBtn.disabled = false;
+      }, 1000);
+    });
   </script>
+
+
 </body>
 </html>
