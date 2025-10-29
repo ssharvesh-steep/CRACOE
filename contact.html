@@ -25,7 +25,9 @@
   <meta name="twitter:description" content="Get in touch with CRACOE for expert IT services and consulting solutions." />
   <meta name="twitter:image" content="https://cracoe.com/cracoe-logo.png" />
   
-  <link rel="icon" href="cracoe-logo.png" type="image/png">
+  <link rel="icon" href="https://cracoe.com/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://cracoe.com/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="64x64" href="https://cracoe.com/favicon.png">
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -540,13 +542,7 @@
     let globalSocket;
     
     function initGlobalMessaging() {
-      try {
-        globalSocket = io('wss://cracoe-global.herokuapp.com');
-        globalSocket.on('connect', () => updateConnectionStatus('Connected globally', 'success'));
-        globalSocket.on('disconnect', () => updateConnectionStatus('Offline', 'error'));
-      } catch(e) {
-        updateConnectionStatus('Local mode', 'warning');
-      }
+      updateConnectionStatus('Firebase Ready', 'success');
     }
     
     function updateConnectionStatus(msg, type) {
@@ -560,24 +556,19 @@
     
     async function sendGlobally(data) {
       try {
-        // Save to localStorage first
+        // Save to localStorage
         const messages = JSON.parse(localStorage.getItem('cracoe_messages') || '[]');
         messages.push(data);
         localStorage.setItem('cracoe_messages', JSON.stringify(messages));
         
-        // Broadcast via WebSocket
-        if(globalSocket?.connected) {
-          globalSocket.emit('message', data);
-        }
-        
-        // Send via external service
-        await fetch('https://formspree.io/f/xpznvqko', {
+        // Send to Firebase for cross-device sync
+        await fetch('https://cracoe-messages-default-rtdb.firebaseio.com/messages.json', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
         });
         
-        // Trigger storage event for same-device communication
+        // Trigger storage event for same-device
         window.dispatchEvent(new StorageEvent('storage', {
           key: 'cracoe_messages',
           newValue: JSON.stringify(messages)
