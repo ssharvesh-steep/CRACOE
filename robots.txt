@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://cracoe.com/sitemap.xml
+Sitemap: https://cracoe.com/logo-sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
