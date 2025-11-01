@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://cracoe.com/</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-logo.png</image:loc>
+      <image:title>CRACOE - Elite IT Solutions Logo</image:title>
+      <image:caption>Official logo of CRACOE, a leading IT consultancy firm specializing in AI development, data analytics, and digital transformation services</image:caption>
+      <image:geo_location>Namakkal, Tamil Nadu, India</image:geo_location>
+      <image:license>https://cracoe.com</image:license>
+    </image:image>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cracoe.com/services.html</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-logo.png</image:loc>
+      <image:title>CRACOE Services - AI Development and Data Analytics</image:title>
+      <image:caption>CRACOE logo representing our comprehensive IT services including AI development, data analytics, and digital transformation</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cracoe.com/our-team.html</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-logo.png</image:loc>
+      <image:title>CRACOE Team - Expert IT Professionals</image:title>
+      <image:caption>CRACOE brand representing our team of expert IT professionals and consultants</image:caption>
+    </image:image>
+  </url>
+</urlset>
