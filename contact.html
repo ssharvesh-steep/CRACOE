@@ -151,101 +151,42 @@
   <section class="min-h-screen pb-20" style="background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%); padding-top: 100px;">
     <div class="max-w-6xl mx-auto px-8">
       <div class="mb-20">
-        <h1 class="text-6xl md:text-8xl font-light text-black tracking-wider mb-8" style="font6-family: 'Roboto Flex', sans-serif;">
-          AI Development & Data Analytics Services by CRACOE
-        </h1>
-        <h2 class="text-2xl font-light text-black mb-4">Services</h2>
-        <h2 class="text-2xl font-light text-black mb-4">Process</h2>
-        <h2 class="text-2xl font-light text-black mb-4">Impact</h2>
-        <h2 class="text-2xl font-light text-black mb-4">About</h2>
-        <h2 class="text-2xl font-light text-black mb-4">Testimonials</h2>
-        <h3 class="text-xl font-light text-black mb-4">Services under each section</h3>
-        <p class="text-lg text-gray-600 max-w-2xl">
-          First 40 words should contain "AI development", "data analytics", "IT consultancy". Ready to start your next project? Get in touch with our team and let's discuss how we can bring your vision to life.
-        </p>
+      
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-        <!-- Contact Form -->
-        <div class="bg-white/30 backdrop-blur-sm rounded-lg p-6 lg:p-8 shadow-lg">
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-white/30 backdrop-blur-sm rounded-lg p-8 shadow-lg">
           <div class="mb-8">
-            <span class="text-gray-500 text-xs uppercase tracking-wider">■ GET IN TOUCH</span>
+            <span class="text-gray-500 text-xs uppercase tracking-wider">■ CONTACT INFORMATION</span>
           </div>
           
-          <!-- Connection Status -->
-          <div id="connection-status" class="mb-4 p-2 text-xs text-center rounded hidden">
-            <span id="status-text">Connecting...</span>
-          </div>
-          
-          <!-- Message Container -->
-          <div id="message-container" class="mb-6 p-4 rounded-lg hidden">
-            <p id="message-text" class="text-sm font-medium"></p>
-          </div>
-          
-          <form id="contact-form" class="space-y-6">
+          <div class="space-y-8">
             <div>
-              <label class="block text-sm font-medium text-black mb-2">NAME</label>
-              <input type="text" id="name" name="name" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+              <h3 class="text-lg font-medium text-black mb-3">EMAIL</h3>
+              <p class="text-gray-700 text-lg">info@cracoe.com</p>
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-black mb-2">EMAIL</label>
-              <input type="email" id="email" name="email" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+              <h3 class="text-lg font-medium text-black mb-3">PHONE</h3>
+              <p class="text-gray-700 text-lg">+91-9843147333</p>
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-black mb-2">PHONE</label>
-              <input type="tel" id="phone" name="phone" class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
+              <h3 class="text-lg font-medium text-black mb-3">ADDRESS</h3>
+              <p class="text-gray-700 text-lg leading-relaxed">
+                H448 High School Road, P.Velur<br>
+                Namakkal, Tamil Nadu - 637001<br>
+                India
+              </p>
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-black mb-2">COMPANY</label>
-              <input type="text" id="company" name="company" class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none transition-colors rounded-t-md">
-            </div>
-            
-            <div>
-              <label class="block text-sm font-medium text-black mb-2">MESSAGE</label>
-              <textarea rows="4" id="message" name="message" required class="w-full border-b-2 border-gray-300 bg-white/50 backdrop-blur-sm py-3 px-2 focus:border-black focus:outline-none resize-none transition-colors rounded-t-md" onkeydown="if(event.key==='Enter'&&event.ctrlKey){document.getElementById('contact-form').dispatchEvent(new Event('submit'));}"></textarea>
-            </div>
-            
-            <button type="submit" class="bg-black text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors disabled:opacity-50" id="submit-btn">
-              Get a Free AI Consultation
-            </button>
-            <div class="fixed bottom-4 right-4 z-50">
-              <button class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
-                Get a Free AI Consultation
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="space-y-8">
-          <div>
-            <span class="text-gray-500 text-xs uppercase tracking-wider">■ REACH US</span>
-            <div class="mt-6 space-y-6">
-              <div>
-                <h3 class="text-sm font-medium text-black mb-2">EMAIL</h3>
-                <p class="text-gray-600">info@cracoe.com</p>
-              </div>
-              
-              <div>
-                <h3 class="text-sm font-medium text-black mb-2">PHONE</h3>
-                <p class="text-gray-600">+91-9843147333</p>
-              </div>
-              
-              <div>
-                <h3 class="text-sm font-medium text-black mb-2">ADDRESS</h3>
-                <p class="text-gray-600">CRACOE Pvt Ltd, Namakkal, Tamil Nadu - 637001, +91-xxx, <a href="mailto:contact@cracoe.com">contact@cracoe.com</a><br>H448 High School Road, P.Velur<br>Namakkal, Tamil Nadu, India</p>
-              </div>
-              <div>
-              <h3 class="text-sm font-medium text-black mb-2 uppercase">OFFICE HOURS</h3>
-              <p class="text-gray-600">
+              <h3 class="text-lg font-medium text-black mb-3">OFFICE HOURS</h3>
+              <p class="text-gray-700 text-lg leading-relaxed">
                 Monday - Friday: 9:00 AM - 6:00 PM<br>
                 Saturday: 10:00 AM - 4:00 PM<br>
                 Sunday: Closed
               </p>
-            </div>
             </div>
           </div>
         </div>
@@ -594,36 +535,7 @@
     // Initialize global messaging
     initGlobalMessaging();
     
-    // Contact form functionality
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitBtn = document.querySelector('button[type="submit"]');
-      submitBtn.textContent = 'SENDING...';
-      submitBtn.disabled = true;
-      
-      const formData = {
-        id: Date.now(),
-        timestamp: new Date().toISOString(),
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value || '',
-        company: document.getElementById('company').value || '',
-        message: document.getElementById('message').value
-      };
-      
-      const success = await sendGlobally(formData);
-      
-      if(success) {
-        showMessage('Message sent globally! We will get back to you soon.', 'success');
-        document.getElementById('contact-form').reset();
-      } else {
-        showMessage('Failed to send message. Please try again.', 'error');
-      }
-      
-      submitBtn.textContent = 'SEND MESSAGE';
-      submitBtn.disabled = false;
-    });
+    // Simplified contact page - no form functionality needed
   </script>
 
 
