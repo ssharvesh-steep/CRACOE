@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://cracoe.com/</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-hero-desktop-1920w.jpg</image:loc>
+      <image:caption>CRACOE Elite IT Solutions - AI Development and Data Analytics Services Hero Image</image:caption>
+      <image:title>CRACOE IT Services Hero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-logo-800w.png</image:loc>
+      <image:caption>CRACOE Logo - Elite IT Solutions, AI Development and Data Analytics Services</image:caption>
+      <image:title>CRACOE Company Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-services-showcase.jpg</image:loc>
+      <image:caption>CRACOE Services Showcase - AI Development, Data Analytics, IT Consulting</image:caption>
+      <image:title>CRACOE Services Overview</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services Page Images -->
+  <url>
+    <loc>https://cracoe.com/services.html</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/ai-development-service.jpg</image:loc>
+      <image:caption>AI Development Services - Machine Learning and Artificial Intelligence Solutions by CRACOE</image:caption>
+      <image:title>AI Development Services</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/data-analytics-service.jpg</image:loc>
+      <image:caption>Data Analytics Services - Business Intelligence and Market Analysis by CRACOE</image:caption>
+      <image:title>Data Analytics Services</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/it-consultancy-service.jpg</image:loc>
+      <image:caption>IT Consultancy Services - Digital Transformation and Tech Strategy by CRACOE</image:caption>
+      <image:title>IT Consultancy Services</image:title>
+    </image:image>
+  </url>
+
+  <!-- Team Page Images -->
+  <url>
+    <loc>https://cracoe.com/our-team.html</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/sharvesh-founder-cracoe.jpg</image:loc>
+      <image:caption>Sharvesh - Founder of CRACOE, Expert in IT Solutions and AI Development</image:caption>
+      <image:title>Sharvesh - CRACOE Founder</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/sakthivel-cofounder-cracoe.jpg</image:loc>
+      <image:caption>Sakthivel - Co-Founder of CRACOE, Specialist in Data Analytics and Tech Innovation</image:caption>
+      <image:title>Sakthivel - CRACOE Co-Founder</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/sreejith-cofounder-cracoe.jpg</image:loc>
+      <image:caption>Sreejith - Co-Founder of CRACOE, Expert in Software Development and Digital Solutions</image:caption>
+      <image:title>Sreejith - CRACOE Co-Founder</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/shridharshini-cofounder-cracoe.jpg</image:loc>
+      <image:caption>Shri Dharshini - Co-Founder of CRACOE, Specialist in IT Strategy and Business Development</image:caption>
+      <image:title>Shri Dharshini - CRACOE Co-Founder</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/sivadharana-cofounder-cracoe.jpg</image:loc>
+      <image:caption>SivaDharana - Co-Founder of CRACOE, Expert in Technology Innovation and Project Management</image:caption>
+      <image:title>SivaDharana - CRACOE Co-Founder</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact Page Images -->
+  <url>
+    <loc>https://cracoe.com/contact.html</loc>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-office-location.jpg</image:loc>
+      <image:caption>CRACOE Office Location - IT Services Company in Namakkal, Tamil Nadu, India</image:caption>
+      <image:title>CRACOE Office Location</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cracoe.com/cracoe-contact-team.jpg</image:loc>
+      <image:caption>Contact CRACOE Team - Expert IT Consultants Ready to Help with Your Digital Transformation</image:caption>
+      <image:title>CRACOE Contact Team</image:title>
+    </image:image>
+  </url>
+
+</urlset>

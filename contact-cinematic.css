@@ -1,0 +1,431 @@
+/* ===================================
+   CINEMATIC CONTACT PAGE STYLES
+   =================================== */
+
+:root {
+    --primary-cyan: #00d4ff;
+    --primary-blue: #00aaff;
+    --bg-dark: #000000;
+    --glass-bg: rgba(20, 20, 30, 0.4);
+    --glass-border: rgba(0, 212, 255, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --font-heading: 'Syncopate', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ===================================
+   BACKGROUND EFFECTS
+   =================================== */
+.cinematic-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.cinematic-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 60%);
+    opacity: 0.6;
+}
+
+.grid-line {
+    position: absolute;
+    background: rgba(0, 212, 255, 0.05);
+    transition: all 0.5s ease;
+}
+
+/* ===================================
+   LAYOUT
+   =================================== */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 80px;
+    /* Space for topbar */
+    position: relative;
+    z-index: 1;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    /* Center the single column */
+    flex-direction: row;
+    /* Ensure row direction for flexibility, though only one item remains */
+    /* grid-template-columns: 1fr 1fr;  Removed grid */
+    gap: 4rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    flex: 1;
+    align-items: center;
+}
+
+/* ===================================
+   LEFT COLUMN: TRANSMISSION
+   =================================== */
+.transmission-panel {
+    position: relative;
+    padding: 2rem;
+}
+
+.transmission-label {
+    font-family: var(--font-mono);
+    color: var(--primary-cyan);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-cyan);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+.transmission-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.transmission-text {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 4rem;
+    border-left: 1px solid var(--primary-cyan);
+    padding-left: 2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ===================================
+   ENHANCED HOLOGRAPHIC STYLES
+   =================================== */
+
+/* Method Items - HUD Cards */
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
+    background: rgba(10, 15, 20, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+    /* Techy sharp corners */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+.method-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-cyan);
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.method-item:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+}
+
+.method-item:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 10px var(--primary-cyan);
+}
+
+/* Icons with Glow */
+.method-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-cyan);
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 4px;
+    position: relative;
+}
+
+.method-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-cyan);
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+.method-item:hover .method-icon::after {
+    opacity: 0.5;
+    transform: scale(1);
+    animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* Typography refinements */
+.method-details h4 {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--primary-cyan);
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.method-details p {
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* Scanline Overlay on Background */
+.cinematic-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.3;
+}
+
+.card-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-cyan);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 1.25rem;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-cyan);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 1px var(--primary-cyan);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.25rem;
+    background: var(--primary-cyan);
+    border: none;
+    border-radius: 4px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.submit-btn:hover::after {
+    left: 100%;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 1024px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .transmission-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ===================================
+   HOLOGRAPHIC INTERACTION STATES
+   =================================== */
+.submit-btn.btn-loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+.submit-btn.btn-loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    margin-left: -12px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: holo-spin 0.8s linear infinite;
+}
+
+@keyframes holo-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.submit-btn.btn-success {
+    background: #00ffaa;
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.4);
+}
+
+.submit-btn.btn-success::before {
+    content: '✓';
+    margin-right: 8px;
+    font-weight: 800;
+}
